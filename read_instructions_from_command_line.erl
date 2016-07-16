@@ -3,12 +3,13 @@
 -export([start/0]).
 
 -import(parse_command, [parse/1]).
+-import(robot, [initialState/0, execute/2]).
 
 start() ->
     io:fwrite("Enter instructions~n"),
-    parseCommand(io:get_line("")).
+    parseCommand(io:get_line(""), initialState()).
 
-parseCommand(Line) ->
+parseCommand(Line, CurrentState) ->
   Command = parse(Line),
-  io:fwrite("~w~n", [Command]),
-  parseCommand(io:get_line("")).
+  NewState = execute(CurrentState, Command),
+  parseCommand(io:get_line(""), NewState).

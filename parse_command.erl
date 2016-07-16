@@ -21,12 +21,12 @@ place(_) ->
   invalidCommand.
 
 place({X, []}, {Y, []}, "NORTH") when is_integer(X), is_integer(Y) ->
-  {place, {X, Y, "NORTH"}};
+  {place, {X, Y, north}};
 place({X, []}, {Y, []}, "EAST") when is_integer(X), is_integer(Y) ->
-  {place, {X, Y, "EAST"}};
+  {place, {X, Y, east}};
 place({X, []}, {Y, []}, "SOUTH") when is_integer(X), is_integer(Y) ->
-  {place, {X, Y, "SOUTH"}};
+  {place, {X, Y, south}};
 place({X, []}, {Y, []}, "WEST") when is_integer(X), is_integer(Y) ->
-  {place, {X, Y, "WEST"}};
+  {place, {X, Y, west}};
 place(_ , _, _) ->
   invalidCommand.
