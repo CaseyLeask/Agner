@@ -5,10 +5,10 @@
 -import(parse_command, [parse/1]).
 
 start() ->
-    io:fwrite("Hello, World~n"),
+    io:fwrite("Enter instructions~n"),
     parseCommand(io:get_line("")).
 
-parseCommand(Command) ->
-  Instruction = parse(Command),
-  io:fwrite("~w~n", [Instruction]),
+parseCommand(Line) ->
+  Command = parse(Line),
+  io:fwrite("~w~n", [Command]),
   parseCommand(io:get_line("")).
